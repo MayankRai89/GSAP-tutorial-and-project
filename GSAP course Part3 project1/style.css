@@ -1,0 +1,64 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background-color: #111;
+}
+
+main {
+    height: 100%;
+    width: 100%;
+    background-color: #111;
+    /* cursor: none; */
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#cursor {
+    height: 20px;
+    width: 20px;
+    background-color: white;
+    clip-path: polygon(50% 0%, 100% 96%, 50% 51%, 50% 51%, 1% 99%);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    pointer-events: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 4px;
+    font-weight: bold;
+    color: red;
+    overflow: hidden;
+}
+
+#img {
+    height: 30vw;
+    width: 60vw;
+    background-color: red;
+    background-image: url(https://images.unsplash.com/photo-1647445170143-6062d99ce28a?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-position: center;
+    background-size: cover;
+
+}
+
+.gradient-text {
+    background: linear-gradient(45deg, red, orange, pink);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
