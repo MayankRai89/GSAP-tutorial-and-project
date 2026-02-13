@@ -124,3 +124,94 @@ function page2Animation() {
   );
 }
 page2Animation();
+
+gsap.registerPlugin(ScrollTrigger);
+
+function page3Animation() {
+  var tl3 = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".section3",
+      start: "top 80%",
+      end: "bottom 30%",
+      scrub: 1,
+      // markers: true
+    },
+  });
+
+  // Proposal text
+  tl3.from(".proposal-part1 h2", {
+    x: -200,
+    opacity: 0,
+    duration: 0.6,
+  });
+
+  tl3.from(
+    ".proposal-part1 p",
+    {
+      x: -100,
+      opacity: 0,
+      duration: 0.5,
+    },
+    "-=0.3",
+  );
+
+  tl3.from(
+    ".proposal-part1 button",
+    {
+      opacity: 0,
+      duration: 0.4,
+    },
+    "-=0.2",
+  );
+
+  // Proposal image
+  tl3.from(
+    ".proposal-part2 img",
+    {
+      scale: 0.9,
+      opacity: 0,
+      duration: 0.6,
+    },
+    "-=0.6",
+  );
+
+  // Case study heading
+  tl3.from(".casestudy", {
+    y: 40,
+    opacity: 0,
+    duration: 0.5,
+  });
+
+  // Dark box
+  tl3.from(".case-study-box", {
+    y: 80,
+    opacity: 0,
+    duration: 0.6,
+  });
+
+  // Cases (alternate direction)
+  tl3.from(
+    ".case",
+    {
+      x: (i) => (i % 2 === 0 ? -100 : 100),
+      y: 40,
+      opacity: 0,
+      stagger: 0.2,
+      duration: 0.6,
+    },
+    "-=0.4",
+  );
+}
+
+page3Animation();
+gsap.to(".case-study-box", {
+  scrollTrigger: {
+    trigger: ".case-study-box",
+    start: "bottom 50%",
+    end: "bottom 10%",
+    scrub: 1,
+    markers: true,
+  },
+  y: 80,
+  opacity: 0,
+});
