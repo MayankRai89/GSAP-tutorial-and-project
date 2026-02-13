@@ -132,13 +132,12 @@ function page3Animation() {
     scrollTrigger: {
       trigger: ".section3",
       start: "top 80%",
-      end: "bottom 30%",
+      end: "bottom 40%",
       scrub: 1,
       // markers: true
     },
   });
 
-  // Proposal text
   tl3.from(".proposal-part1 h2", {
     x: -200,
     opacity: 0,
@@ -164,7 +163,6 @@ function page3Animation() {
     "-=0.2",
   );
 
-  // Proposal image
   tl3.from(
     ".proposal-part2 img",
     {
@@ -175,29 +173,45 @@ function page3Animation() {
     "-=0.6",
   );
 
-  // Case study heading
   tl3.from(".casestudy", {
-    y: 40,
-    opacity: 0,
-    duration: 0.5,
-  });
-
-  // Dark box
-  tl3.from(".case-study-box", {
-    y: 80,
+    y: 60,
     opacity: 0,
     duration: 0.6,
+    ease: "power2.out",
   });
 
-  // Cases (alternate direction)
+  tl3.from(
+    ".case-study-box",
+    {
+      y: 100,
+      opacity: 0,
+      duration: 0.8,
+      ease: "power2.out",
+    },
+    "-=0.3",
+  );
+
   tl3.from(
     ".case",
     {
-      x: (i) => (i % 2 === 0 ? -100 : 100),
+      x: (i) => (i % 2 === 0 ? -120 : 120),
       y: 40,
       opacity: 0,
+      stagger: 0.25,
+      duration: 0.8,
+      ease: "power2.out",
+    },
+    "-=0.5",
+  );
+
+  tl3.from(
+    ".case h4 i",
+    {
+      rotation: -90,
+      opacity: 0,
+      duration: 0.5,
       stagger: 0.2,
-      duration: 0.6,
+      ease: "power2.out",
     },
     "-=0.4",
   );
