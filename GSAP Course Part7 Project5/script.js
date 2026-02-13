@@ -210,7 +210,7 @@ gsap.to(".case-study-box", {
     start: "bottom 50%",
     end: "bottom 10%",
     scrub: 1,
-    markers: true,
+    // markers: true,
   },
   y: 80,
   opacity: 0,
