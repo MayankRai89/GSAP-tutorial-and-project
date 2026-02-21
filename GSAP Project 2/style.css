@@ -1,0 +1,342 @@
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Martel Sans", sans-serif;
+}
+
+:root {
+    --cursor: url(./img/cusour.png), auto;
+}
+
+body {
+    background: #22559e;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header {
+    position: relative;
+    width: 60%;
+    height: 80%;
+    background: linear-gradient(100deg, #153777, #2765b2);
+    box-shadow: 0px 30px 25px -10px rgb(0, 0, 0, .6);
+    padding: 0px 30px;
+}
+
+header nav {
+    width: 100%;
+    height: 15%;
+    /* border: 1px solid white; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header nav img {
+    width: 90px;
+    height: 50px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+header nav ul li {
+    padding: 3px 10px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 500;
+    color: rgb(238, 238, 238, .85);
+    transition: .3s linear;
+    cursor: var(--cursor);
+}
+
+header nav ul li a:hover {
+    color: #fff;
+
+}
+
+header nav .buy_now_btn {
+    color: rgb(238, 238, 238, .95);
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 5px 20px;
+    border: 2px solid rgb(238, 238, 238, rgb(238, 238, 238, .95));
+    border-radius: 20px;
+    cursor: var(--cursor);
+    transition: .3s linear;
+}
+
+header nav .buy_now_btn:hover {
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+header section {
+    width: 100%;
+    height: 85%;
+    /* border: 1px solid white; */
+    display: flex;
+}
+
+header section .left-bx,
+.right-bx {
+    position: relative;
+    width: 60%;
+    height: 100%;
+    /* border: 1px solid white; */
+}
+
+header section .right-bx {
+    width: 40%;
+}
+
+header section .left-bx #left_btn {
+    position: absolute;
+    left: 0;
+    top: 60px;
+    color: #fff;
+    font-size: 12px;
+    cursor: var(--cursor);
+    transition: .3s linear;
+}
+
+header section .left-bx #left_btn:hover {
+    color: #2d71c0;
+}
+
+header section .left-bx {
+    padding: 40px 0px 0px 70px;
+}
+
+header section .left-bx .content {
+    /* border: 1px solid #fff; */
+    color: #fff;
+}
+
+header section .left-bx .content h1 {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+header section .left-bx .content p:nth-child(2) {
+    font-size: 11px;
+    color: rgb(255, 255, 255, .43);
+}
+
+header section .left-bx .content h2 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+header section .left-bx .content .nutritation_bx {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+header section .left-bx .content .nutritation_bx .cards {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    background: rgb(45, 113, 192, .5);
+    margin-right: 5px;
+}
+
+header section .left-bx .content .nutritation_bx .cards.cards:nth-child(1) {
+    background: rgb(45, 133, 192);
+}
+
+header section .left-bx .content .nutritation_bx .cards p {
+    font-size: 7px;
+    text-align: center;
+    color: rgb(255, 255, 255, .7);
+    font-weight: 600;
+    margin-top: 13px;
+}
+
+header section .left-bx .content .nutritation_bx .cards:nth-child(1) p {
+    margin-top: 5px;
+}
+
+header section .left-bx .content .nutritation_bx .cards h3 {
+    text-align: center;
+    font-weight: 600;
+    margin-top: 2px;
+}
+
+header section .left-bx .content .nutritation_bx .cards h6 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 25%;
+    background: rgb(56, 126, 206, .5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+}
+
+header section .left-bx .content .nutritation_bx .cards:nth-child(1) h6 {
+    background: rgb(56, 126, 206);
+}
+
+header section .left-bx .content p:nth-child(5) {
+    font-size: 10px;
+    background: rgb(255, 255, 255, .5);
+    margin-top: 5px;
+}
+
+header section .left-bx .content button {
+    margin-top: 30px;
+    padding: 3px 40px;
+    border-radius: 20px;
+    border: 2px solid #fff;
+    background: transparent;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    transition: .3s linear;
+    cursor: var(--cursor);
+}
+
+header section .left-bx .content button:hover {
+    background: #2d71c0;
+}
+
+header section .left-bx .item_bx {
+    display: flex;
+    align-items: center;
+    /* border: 1px solid #fff; */
+    margin-top: 19px;
+}
+
+header section .left-bx .item_bx .card_pepsi {
+    width: 30px;
+    /* border: 1px solid #fff; */
+    margin-right: 30px;
+    overflow: hidden;
+    cursor: var(--cursor);
+    z-index: 9999999999999999;
+}
+
+header section .left-bx .item_bx .card_pepsi img {
+    width: 30px;
+    transition: .3s linear;
+}
+
+header section .left-bx .item_bx .card_pepsi h6 {
+    width: 100%;
+    text-align: center;
+    color: #2c6cbb;
+}
+
+header section .left-bx .item_bx .card_pepsi:hover h6 {
+    color: #fff;
+}
+
+header section .right-bx img {
+    width: 430px;
+    margin: 20px 0px 0px -180px;
+}
+
+header section .right-bx .right_btn_bx {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+header section .right-bx .right_btn_bx span {
+    font-size: 8px;
+    font-weight: 600;
+    color: rgb(255, 255, 255, .5);
+    margin-right: 7px;
+}
+
+header section .right-bx .right_btn_bx .bi {
+    font-size: 12px;
+    cursor: var(--cursor);
+    transition: .3s linear;
+}
+
+header section .right-bx .right_btn_bx .bi:hover {
+    color: #2d71c0;
+}
+
+header section .right-bx .level {
+    position: absolute;
+    top: 20%;
+    right: 0;
+    width: 30px;
+    height: 45%;
+    /* border: 1px solid #fff; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+header section .right-bx .level h6 {
+    width: 8px;
+    height: 1px;
+    background: rgb(255, 255, 255, .5);
+    margin-top: 13px;
+}
+
+header section .right-bx .level h6:nth-child(3) {
+    width: 18px;
+    height: 1px;
+    background: #fff;
+    margin-top: 13px;
+}
+
+header .ml_bx {
+    position: absolute;
+    width: 110px;
+    height: 150px;
+    background: rgb(44, 138, 245);
+    bottom: 0;
+    right: 0;
+    color: #fff;
+    padding: 20px 0px 0px 20px;
+}
+
+header .ml_bx p {
+    font-size: 9px;
+}
+
+header .ml_bx h6 {
+    font-size: 10px;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+header .ml_bx h5 {
+    position: absolute;
+    width: 100%;
+    height: 20%;
+    background: #196bd0;
+    bottom: 0;
+    left: 0;
+}
