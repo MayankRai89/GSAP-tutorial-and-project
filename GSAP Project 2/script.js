@@ -5,15 +5,13 @@ const pepsi = [
     amount_per: "8.6%",
     fat: "0g",
     fat_per: "0%",
-    Sodium: "310mg",
+    sodium: "30mg",
     sodium_per: "1%",
     carbohydrated: "48g",
     carbohydrated_per: "15.3%",
     protien: "0g",
     protien_per: "0%",
     ml: "250ml",
-    poster1: "img/1 Pepsi white.png",
-    poster2: "img/1 Pepsi blue.png",
     main_poster: "img/pepsi diet.png",
   },
   {
@@ -22,15 +20,13 @@ const pepsi = [
     amount_per: "7.5%",
     fat: "0g",
     fat_per: "0%",
-    sodium: "310mg",
+    sodium: "30mg",
     sodium_per: "1%",
     carbohydrated: "41g",
     carbohydrated_per: "14%",
     protien: "0g",
     protien_per: "0%",
     ml: "330ml",
-    poster1: "img/2 Pepsi white.png",
-    poster2: "img/2 Pepsi blue.png",
     main_poster: "img/can.png",
   },
   {
@@ -46,8 +42,6 @@ const pepsi = [
     protien: "0g",
     protien_per: "0%",
     ml: "500ml",
-    poster1: "img/3 Pepsi white.png",
-    poster2: "img/3 Pepsi blue.png",
     main_poster: "img/pepsi .5ltr.png",
   },
   {
@@ -63,9 +57,7 @@ const pepsi = [
     protien: "0g",
     protien_per: "0%",
     ml: "1 LTR",
-    poster1: "img/4 Pepsi white.png",
-    poster2: "img/4 Pepsi blue.png",
-    main_poster: "img/pepsi .1ltr.png",
+    main_poster: "img/pepsi 1ltr.png",
   },
   {
     name: "Pepsi 1.5 LTR",
@@ -80,8 +72,6 @@ const pepsi = [
     protien: "0g",
     protien_per: "0%",
     ml: "1.5 LTR",
-    poster1: "img/5 Pepsi white.png",
-    poster2: "img/5 Pepsi blue.png",
     main_poster: "img/pepsi 1.5ltr.png",
   },
   {
@@ -97,27 +87,56 @@ const pepsi = [
     protien: "0g",
     protien_per: "0%",
     ml: "2 LTR",
-    poster1: "img/6 Pepsi white.png",
-    poster2: "img/6 Pepsi blue.png",
     main_poster: "img/pepsi 2ltr.png",
   },
 ];
 
-Array.from(document.getElementsByClassName("card_pepsi")).forEach((ele, i) => {
-  ele.addEventListener(
-    "mouseover",
-    () =>
-      (document.getElementsByClassName("pepsi_hover_img")[i].src =
-        pepsi[i].poster1),
-  );
-  ele.addEventListener("mouseout", () => {
-    document.getElementsByClassName("pepsi_hover_img")[i].src =
-      pepsi[i].poster2;
+const cards = document.querySelectorAll(".card_pepsi");
+const mlTitle = document.querySelector(".ml_bx h3");
+const leftBtn = document.getElementById("left_btn");
+const rightBtn = document.querySelector(".right_btn_bx");
+
+let index = 1;
+
+function updateUI(i) {
+  const data = pepsi[i];
+
+  document.getElementById("Main_bottle").src = data.main_poster;
+  document.getElementById("main_title").innerText = data.name;
+
+  document.getElementById("cl").innerText = data.amount;
+  document.getElementById("cl1").innerText = data.amount_per;
+  document.getElementById("fat").innerText = data.fat;
+  document.getElementById("fat1").innerText = data.fat_per;
+  document.getElementById("sodium").innerText = data.sodium;
+  document.getElementById("sodium1").innerText = data.sodium_per;
+  document.getElementById("carbohydrate").innerText = data.carbohydrated;
+  document.getElementById("carbohydrate1").innerText = data.carbohydrated_per;
+  document.getElementById("Protien").innerText = data.protien;
+  document.getElementById("Protien1").innerText = data.protien_per;
+
+  mlTitle.innerText = data.ml;
+}
+
+cards.forEach((card, i) => {
+  card.addEventListener("mouseover", () => {
+    index = i;
+    updateUI(index);
   });
 });
 
-Array.from(document.getElementsByClassName("card_pepsi")).forEach((ele, i) => {
-  ele.addEventListener("click", () => {
-    document.getElementById("Main_bottle").src = pepsi;
-  });
+leftBtn.addEventListener("click", () => {
+  index--;
+  if (index < 0) {
+    index = pepsi.length - 1;
+  }
+  updateUI(index);
+});
+
+rightBtn.addEventListener("click", () => {
+  index++;
+  if (index >= pepsi.length) {
+    index = 0;
+  }
+  updateUI(index);
 });
